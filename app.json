@@ -1,0 +1,7 @@
+{
+  "name": "Network Intent Assistant Deployer",
+  "description": "Intent deployer for Network Intent Assitant Dialogflow chatbot.",
+  "image": "heroku/python",
+  "repository": "https://github.com/asjacobs92/nia-deployer",
+  "keywords": ["python", "restapi"]
+}
