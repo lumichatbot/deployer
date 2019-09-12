@@ -1,0 +1,602 @@
+[
+    {
+        "nile": "define intent stnIntent: for group('professors') add middlebox('firewall'), middlebox('ids'), middlebox('parental-control'), middlebox('load-balancer'), middlebox('dpi') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: for group('staff') set bandwidth('min', '70', 'mbps') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: for group('professors') start hour('4:58') end hour('11:4') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: for group('dorms') allow traffic('torrent'), traffic('streaming') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: for group('students') add middlebox('parental-control') set quota('3', 'gb/wk') allow traffic('peer2peer'), protocol('icmp') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: for group('staff') add middlebox('parental-control'), middlebox('load-balancer'), middlebox('dpi'), middlebox('firewall') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.21.85') set bandwidth('min', '80', 'mbps') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.24.112') start hour('6:1') end hour('9:36') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: for group('professors') allow service('netflix') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.32.140') add middlebox('firewall') set quota('5', 'gb/wk') allow service('vimeo'), service('instagram') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.31.138') add middlebox('parental-control'), middlebox('ids') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: for group('students') set quota('4', 'gb/wk') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.4.22') start hour('5:11') end hour('10:42') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.41.177') allow service('stremio'), service('netflix') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.41.179') add middlebox('load-balancer') set bandwidth('min', '30', 'mbps') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: for group('professors') add middlebox('ids') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.27.117') set bandwidth('min', '20', 'mbps') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: for group('staff') start hour('4:25') end hour('9:47') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: for group('professors') allow protocol('sftp'), service('bittorrent') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: for group('professors') add middlebox('ids') set bandwidth('min', '30', 'mbps') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: for group('dorms') add middlebox('load-balancer'), middlebox('dpi'), middlebox('parental-control'), middlebox('ids'), middlebox('firewall') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.37.162') set bandwidth('min', '10', 'mbps') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: for group('staff') start hour('5:19') end hour('9:25') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: for group('staff') allow service('stremio'), service('facebook') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.22.104') add middlebox('ids') set bandwidth('max', '90', 'mbps') allow traffic('torrent'), protocol('smtp') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: for group('professors') add middlebox('load-balancer'), middlebox('parental-control'), middlebox('firewall'), middlebox('dpi'), middlebox('ids') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: for group('students') set quota('6', 'gb/wk') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: for group('staff') start hour('5:33') end hour('10:5') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.34.152') allow traffic('social-media'), service('netflix') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.27.127') add middlebox('ids'), middlebox('load-balancer') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.34.157') add middlebox('load-balancer'), middlebox('ids') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.37.170') set quota('3', 'gb/wk') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.2.9') start hour('4:18') end hour('10:42') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.22.95') allow service('vimeo'), service('youtube') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.37.167') add middlebox('load-balancer') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: for group('students') add middlebox('ids'), middlebox('parental-control'), middlebox('dpi') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.34.161') set quota('1', 'gb/wk') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: for group('dorms') start hour('4:53') end hour('10:15') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.31.134') allow protocol('icmp'), service('facebook') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.27.123') add middlebox('parental-control'), middlebox('firewall') set quota('9', 'gb/wk') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: for group('students') add middlebox('load-balancer'), middlebox('firewall'), middlebox('dpi'), middlebox('parental-control'), middlebox('ids') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.12.54') set bandwidth('max', '70', 'mbps') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: for group('professors') start hour('5:30') end hour('10:29') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: for group('students') allow service('instagram'), service('facebook') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: for group('staff') add middlebox('ids'), middlebox('dpi'), middlebox('parental-control') set bandwidth('min', '30', 'mbps') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.41.173') add middlebox('ids'), middlebox('parental-control'), middlebox('load-balancer') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: for group('staff') set quota('1', 'gb/wk') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: for group('staff') start hour('5:44') end hour('10:20') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.17.74') allow service('vimeo'), protocol('sftp') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.7.26') add middlebox('parental-control'), middlebox('firewall') set quota('7', 'gb/wk') allow protocol('http'), service('youtube') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: for group('dorms') add middlebox('parental-control'), middlebox('load-balancer'), middlebox('ids'), middlebox('firewall') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: for group('students') set quota('1', 'gb/wk') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: for group('dorms') start hour('5:56') end hour('10:58') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.27.125') allow service('amazon-prime'), protocol('ftp') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.11.37') set bandwidth('min', '60', 'mbps') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.7.28') add middlebox('firewall'), middlebox('load-balancer'), middlebox('dpi'), middlebox('ids'), middlebox('parental-control') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.24.112') set quota('4', 'gb/wk') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.37.169') start hour('5:52') end hour('10:27') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.21.82') allow service('facebook'), service('bittorrent') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: for group('professors') add middlebox('dpi') set bandwidth('max', '40', 'mbps') allow service('vimeo'), service('bittorrent') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.4.17') add middlebox('firewall'), middlebox('dpi'), middlebox('ids'), middlebox('load-balancer'), middlebox('parental-control') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: for group('students') set quota('6', 'gb/wk') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: for group('professors') start hour('6:0') end hour('9:46') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: for group('professors') allow protocol('snmp'), traffic('social-media') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: for group('dorms') add middlebox('firewall'), middlebox('dpi') allow service('youtube'), service('netflix') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.34.159') add middlebox('ids'), middlebox('load-balancer'), middlebox('dpi'), middlebox('firewall') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.41.182') set quota('7', 'gb/wk') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.11.37') start hour('4:18') end hour('9:35') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.41.181') allow service('amazon-prime'), service('facebook') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.17.75') add middlebox('firewall') set quota('2', 'gb/wk') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.22.95') add middlebox('parental-control') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: for group('students') set quota('6', 'gb/wk') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.32.149') start hour('5:39') end hour('9:21') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.32.144') allow service('vimeo'), service('netflix') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.27.120') add middlebox('dpi'), middlebox('firewall'), middlebox('load-balancer'), middlebox('parental-control') set quota('6', 'gb/wk') allow service('vimeo'), service('instagram') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.22.100') add middlebox('load-balancer'), middlebox('ids'), middlebox('firewall') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.37.171') set quota('2', 'gb/wk') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.37.171') start hour('6:9') end hour('10:23') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.34.156') allow service('amazon-prime'), protocol('sftp') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: for group('professors') add middlebox('parental-control') set quota('7', 'gb/wk') allow protocol('https'), traffic('torrent') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.7.35') add middlebox('firewall') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.41.173') set quota('7', 'gb/wk') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: for group('professors') start hour('6:5') end hour('10:37') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.21.82') allow service('instagram'), service('facebook') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.41.173') add middlebox('firewall') set quota('6', 'gb/wk') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: for group('staff') add middlebox('ids') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.22.104') set quota('6', 'gb/wk') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.12.52') start hour('4:52') end hour('10:20') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.17.71') allow service('stremio'), traffic('social-media') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.37.165') add middlebox('parental-control') set bandwidth('max', '10', 'mbps') allow service('vimeo'), service('instagram') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.24.113') add middlebox('dpi'), middlebox('load-balancer'), middlebox('firewall') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.34.159') set quota('8', 'gb/wk') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: for group('students') start hour('5:12') end hour('11:1') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: for group('professors') allow protocol('icmp'), service('popcorn-time') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: for group('staff') add middlebox('ids'), middlebox('dpi') set bandwidth('min', '70', 'mbps') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.34.160') add middlebox('parental-control'), middlebox('load-balancer'), middlebox('dpi'), middlebox('ids'), middlebox('firewall') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.11.41') set quota('4', 'gb/wk') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.27.122') start hour('6:15') end hour('9:44') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.41.173') allow service('vimeo'), protocol('telnet') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: for group('staff') add middlebox('load-balancer'), middlebox('ids'), middlebox('firewall'), middlebox('dpi') set quota('6', 'gb/wk') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.27.122') add middlebox('firewall') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.37.172') set bandwidth('min', '40', 'mbps') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.14.64') start hour('4:40') end hour('11:13') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.37.164') allow service('amazon-prime'), service('youtube') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: for group('dorms') add middlebox('firewall'), middlebox('parental-control'), middlebox('ids') set bandwidth('max', '30', 'mbps') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: for group('staff') add middlebox('dpi'), middlebox('load-balancer'), middlebox('parental-control'), middlebox('ids'), middlebox('firewall') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: for group('dorms') set quota('1', 'gb/wk') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.34.151') start hour('6:13') end hour('11:7') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.22.103') allow service('facebook'), protocol('udp') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: for group('dorms') add middlebox('dpi'), middlebox('ids') set bandwidth('min', '50', 'mbps') allow service('amazon-prime'), service('facebook') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.24.107') add middlebox('ids'), middlebox('dpi'), middlebox('firewall'), middlebox('parental-control'), middlebox('load-balancer') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.12.54') set bandwidth('min', '90', 'mbps') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.24.109') start hour('6:1') end hour('9:53') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: for group('professors') allow service('stremio'), service('instagram') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.17.80') add middlebox('firewall') set quota('4', 'gb/wk') allow service('bittorrent') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.32.140') add middlebox('dpi'), middlebox('parental-control'), middlebox('ids'), middlebox('load-balancer'), middlebox('firewall') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.32.144') set bandwidth('min', '90', 'mbps') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: for group('dorms') start hour('5:25') end hour('11:4') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: for group('dorms') allow service('amazon-prime'), service('popcorn-time') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.34.155') add middlebox('load-balancer'), middlebox('ids'), middlebox('parental-control') set bandwidth('min', '50', 'mbps') allow protocol('quic'), service('instagram') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: for group('students') add middlebox('ids') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: for group('staff') set bandwidth('min', '10', 'mbps') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.22.95') start hour('6:8') end hour('9:41') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.11.37') allow protocol('sftp'), service('youtube') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: for group('students') set bandwidth('min', '60', 'mbps') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: for group('students') add middlebox('parental-control'), middlebox('ids') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.2.12') set bandwidth('min', '10', 'mbps') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.34.151') start hour('4:43') end hour('9:35') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: for group('professors') allow service('amazon-prime'), traffic('torrent') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: for group('dorms') set quota('5', 'gb/wk') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: for group('dorms') add middlebox('load-balancer'), middlebox('parental-control'), middlebox('ids'), middlebox('firewall'), middlebox('dpi') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.17.77') set quota('5', 'gb/wk') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.17.77') start hour('5:36') end hour('10:10') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.32.142') allow traffic('torrent'), service('bittorrent') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: for group('professors') add middlebox('load-balancer'), middlebox('parental-control'), middlebox('dpi') set quota('9', 'gb/wk') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: for group('dorms') add middlebox('load-balancer'), middlebox('parental-control'), middlebox('ids'), middlebox('dpi') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.2.14') set quota('6', 'gb/wk') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: for group('staff') start hour('4:30') end hour('11:7') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.2.7') allow service('bittorrent') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: for group('students') add middlebox('parental-control'), middlebox('firewall') set quota('6', 'gb/wk') allow protocol('sftp'), service('vimeo') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.12.59') add middlebox('dpi'), middlebox('load-balancer'), middlebox('firewall') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: for group('students') set quota('3', 'gb/wk') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: for group('professors') start hour('4:38') end hour('9:33') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.27.120') allow traffic('torrent'), service('instagram') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.21.85') add middlebox('load-balancer'), middlebox('parental-control'), middlebox('ids'), middlebox('dpi') set bandwidth('min', '70', 'mbps') ",
+        "type": "mixed"
+    },
+    {
+        "nile": "define intent stnIntent: for group('professors') add middlebox('ids'), middlebox('parental-control') ",
+        "type": "sfc"
+    },
+    {
+        "nile": "define intent stnIntent: for group('students') set bandwidth('max', '80', 'mbps') ",
+        "type": "qos"
+    },
+    {
+        "nile": "define intent stnIntent: for group('dorms') start hour('4:27') end hour('10:36') ",
+        "type": "temporal"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.37.167') allow protocol('icmp'), traffic('social-media') ",
+        "type": "acl"
+    },
+    {
+        "nile": "define intent stnIntent: from endpoint('19.16.1.1') to endpoint('172.16.41.175') add middlebox('firewall'), middlebox('load-balancer') set quota('5', 'gb/wk') allow service('stremio'), protocol('https') ",
+        "type": "mixed"
+    }
+]

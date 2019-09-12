@@ -1,7 +1,7 @@
 {
-  "name": "Network Intent Assistant Deployer",
-  "description": "Intent deployer for Network Intent Assitant Dialogflow chatbot.",
+  "name": "Lumi Deployer",
+  "description": "Intent deployer for Lumi Dialogflow chatbot.",
   "image": "heroku/python",
-  "repository": "https://github.com/asjacobs92/nia-deployer",
+  "repository": "https://github.com/lumi-chatbot/deployer",
   "keywords": ["python", "restapi"]
 }
