@@ -3,6 +3,7 @@ import time
 import csv
 
 import compiler
+from deployer import merlin
 
 from utils import dataset, config
 
@@ -17,7 +18,7 @@ def run():
     for intent in intents:
         start = time.time()
         compiled, compilation_time = compiler.compile(intent['nile'])
-        deployment_time = compiler.deploy(compiled)
+        deployment_time = merlin.deploy(compiled)
         total = time.time() - start
         results.append((intent['type'], compilation_time, deployment_time, total))
 
@@ -26,6 +27,7 @@ def run():
         csv_writer.writerow(['type', 'compilation time', 'deployment time', 'total time'])
         for (mtype, compilation_time, deployment_time, total) in results:
             csv_writer.writerow([mtype, compilation_time, deployment_time, total])
+
 
 if __name__ == "__main__":
     run()

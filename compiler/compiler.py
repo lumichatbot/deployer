@@ -2,6 +2,7 @@
 import time
 
 from parser import parse
+from deployer import merlin as merline_deployer
 from manager import topology, storage
 
 
@@ -185,7 +186,7 @@ def handle_request(request):
     policy = None
     try:
         policy = compile(intent)
-        deploy(policy)
+        merline_deployer.deploy(policy)
     except ValueError as err:
         print 'Error: {}'.format(err)
         status = {
@@ -209,6 +210,6 @@ def handle_request(request):
 if __name__ == "__main__":
     intent = "define intent uniIntent: from endpoint('19.16.1.1') to service('netflix') add middlebox('loadbalancer'), middlebox('firewall') start hour('10:00') end hour('10:00')"
     merlin, compile_time = compile(intent)
-    deploy_time = deploy(merlin)
+    deploy_time = merline_deployer.deploy(merlin)
 
     print("Deploy time: ", deploy_time)

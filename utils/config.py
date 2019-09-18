@@ -11,30 +11,30 @@ NILE_ACTIONS_NEGATION = {
 
 ######### DEPLOYMENT ########
 
-OPENFLOW_RULES_PATH = "../../res/openflow_rules.json"
-TC_COMMANDS_PATH = "../../res/tc_rules.json"
+OPENFLOW_RULES_PATH = "../res/openflow_rules.json"
+TC_COMMANDS_PATH = "../res/tc_rules.json"
 
 MERLIN_WORKKING_PATH = "/home/mininet/merlin/"
 MERLIN_EXEC = "Merlin.native"
 MERLIN_FILE_OUTPUT = "generated_merlin.mln"
-MERLIN_EXEC_OUTPUT = "../../res/merlin_output.txt"
+MERLIN_EXEC_OUTPUT = "../res/merlin_output.txt"
 
 
 ########## PATH ###########
-MODEL_WEIGHTS_PATH = "../../res/weights/{}_{}.joblib"
+MODEL_WEIGHTS_PATH = "../res/weights/{}_{}.joblib"
 
-TOPOLOGY_PATH = "../../res/topology.json"
-TOPOLOGY_DOT_PATH = "../../res/topology.dot"
-LEARNING_CURVE_PATH = "../../res/results/learning_curve_{}_{}.csv"
+TOPOLOGY_PATH = "../res/topology.json"
+TOPOLOGY_DOT_PATH = "../res/topology.dot"
+LEARNING_CURVE_PATH = "../res/results/learning_curve_{}_{}.csv"
 
-COMPILATION_DATASET_PATH = "../../res/dataset/compilation.json"
-COMPILATION_RESULTS_PATH = "../../res/dataset/compilation.csv"
+COMPILATION_DATASET_PATH = "../res/dataset/compilation.json"
+COMPILATION_RESULTS_PATH = "../res/dataset/compilation.csv"
 
-EXTRACTION_DATASET_PATH = "../../res/dataset/extraction_{}.json"
-EXTRACTION_RESULTS_PATH = "../../res/results/extraction_{}.csv"
+EXTRACTION_DATASET_PATH = "../res/dataset/extraction_{}.json"
+EXTRACTION_RESULTS_PATH = "../res/results/extraction_{}.csv"
 
-CONTRADICTIONS_DATASET_PATH = "../../res/dataset/contradictions_{}.json"
-CONTRADICTIONS_RESULTS_PATH = "../../res/results/contradictions_{}_{}.csv"
+CONTRADICTIONS_DATASET_PATH = "../res/dataset/contradictions_{}.json"
+CONTRADICTIONS_RESULTS_PATH = "../res/results/contradictions_{}_{}.csv"
 
 
 ########## DATASET ##########

@@ -1,10 +1,11 @@
 """ Merlin deployer """
 
 import os
+import re
 import time
 
 from utils import config
-from merlin import parse as merlin_parse
+import deployer.parser as merlin_parse
 
 
 def deploy(merlin_intent):
