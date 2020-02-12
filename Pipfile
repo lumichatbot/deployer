@@ -3,12 +3,17 @@ url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
+[scripts]
+serve = "gunicorn -w 4 -b 0.0.0.0:8000 app:app"
+
 [packages]
 flask = "*"
 future = "*"
 ply = "*"
 anytree = "*"
-lumi-webhook = {path = "."}
+gunicorn = "*"
+dnspython = "*"
+flask-cors = "*"
 
 [dev-packages]
 pylint = "*"
