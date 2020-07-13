@@ -1,3 +1,3 @@
 """ module init """
-import topology
-import storage
+import manager.topology
+import manager.storage

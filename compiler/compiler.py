@@ -28,16 +28,19 @@ def to_sonata(op_targets):
     for idx, mb in enumerate(middleboxes):
         if idx == 0:
             src = src_targets[0]
-            src_sh = 'echo {}\nvim-emu network add -b -src {}:client-eth0 -dst {}:input\n'.format(src + '-' + mb, src, mb)
+            src_sh = 'echo {}\nvim-emu network add -b -src {}:client-eth0 -dst {}:input\n'.format(
+                src + '-' + mb, src, mb)
             sonata_intent += src_sh
         elif idx == len(middleboxes) - 1:
             dest = dest_targets[0]
-            dest_sh = 'echo {}\nvim-emu network add -b -src {}:output -dst {}:server-eth0\n'.format(mb + '-' + dest, mb, dest)
+            dest_sh = 'echo {}\nvim-emu network add -b -src {}:output -dst {}:server-eth0\n'.format(
+                mb + '-' + dest, mb, dest)
             sonata_intent += dest_sh
 
         if idx != len(middleboxes) - 1:
             next_mb = middleboxes[idx + 1]
-            chain_mb_sh = 'echo {}\nvim-emu network add -b -src {}:output -dst {}:input\n'.format(mb + '-' + next_mb, mb, next_mb)
+            chain_mb_sh = 'echo {}\nvim-emu network add -b -src {}:output -dst {}:input\n'.format(
+                mb + '-' + next_mb, mb, next_mb)
             sonata_intent += chain_mb_sh
 
     return sonata_intent
@@ -189,7 +192,7 @@ def handle_request(request):
         policy = compile(intent)
         merlin_deployer.deploy(policy)
     except ValueError as err:
-        print 'Error: {}'.format(err)
+        print('Error: {}'.format(err))
         status = {
             'code': 404,
             'details': str(err)

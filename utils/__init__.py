@@ -1,3 +1,3 @@
 """ module utils """
-import config
-import dataset
+import utils.config
+import utils.dataset

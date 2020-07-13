@@ -14,6 +14,7 @@ anytree = "*"
 gunicorn = "*"
 dnspython = "*"
 flask-cors = "*"
+lumi-deployer = {editable = true, path = "."}
 
 [dev-packages]
 pylint = "*"

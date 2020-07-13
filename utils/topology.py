@@ -145,7 +145,8 @@ def write_dot():
     for l in links:
         src_id = l['source_id']
         dst_id = l['target_id']
-        str_writer.write('\t{} -> {} [src_port={}, dst_port={}, cost=1];\n'.format(src_id, dst_id, l['source_port'], l['target_port']))
+        str_writer.write('\t{} -> {} [src_port={}, dst_port={}, cost=1];\n'.format(src_id,
+                                                                                   dst_id, l['source_port'], l['target_port']))
 
     str_writer.write('}')
 
@@ -338,7 +339,8 @@ def get_node_tree():
         parent = next((x for x in tree_nodes if x.id == parent_ip), None)
         if not parent:
             parent_node = next((x for x in topology['nodes'] if x['id'] == parent_ip), None)
-            parent = AnyNode(id=parent_node['id'], label=parent_node['label'], properties=parent_node['properties'], capacity=float("inf"))
+            parent = AnyNode(id=parent_node['id'], label=parent_node['label'],
+                             properties=parent_node['properties'], capacity=float("inf"))
             tree_nodes.append(parent)
 
         child = next((x for x in tree_nodes if x.id == child_ip), None)
